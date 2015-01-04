@@ -2,11 +2,17 @@
 
 package ift215.jn;
 
+import javax.swing.JOptionPane;
+
 public class GUI extends javax.swing.JFrame {
 
   
     public GUI() {
         initComponents();
+
+        rbCash.setSelected(true);
+        rootPane.setDefaultButton(btnSubmit);
+        this.setTitle("Shipping Information");
     }
 
     /**
@@ -20,7 +26,7 @@ public class GUI extends javax.swing.JFrame {
 
         pnlShippingInformation = new javax.swing.JPanel();
         lblName = new javax.swing.JLabel();
-        txtbuyerInformation = new javax.swing.JTextField();
+        txtName = new javax.swing.JTextField();
         lblCountry = new javax.swing.JLabel();
         lblAddress = new javax.swing.JLabel();
         cbxCountry = new javax.swing.JComboBox();
@@ -46,9 +52,9 @@ public class GUI extends javax.swing.JFrame {
 
         lblName.setText("Name:");
 
-        txtbuyerInformation.addActionListener(new java.awt.event.ActionListener() {
+        txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtbuyerInformationActionPerformed(evt);
+                txtNameActionPerformed(evt);
             }
         });
 
@@ -85,7 +91,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(pnlShippingInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlShippingInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(cbxCountry, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtbuyerInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -95,7 +101,7 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlShippingInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblName)
-                    .addComponent(txtbuyerInformation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlShippingInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCountry)
@@ -250,9 +256,9 @@ public class GUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtbuyerInformationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtbuyerInformationActionPerformed
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtbuyerInformationActionPerformed
+    }//GEN-LAST:event_txtNameActionPerformed
 
     private void rbCashStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rbCashStateChanged
         // TODO add your handling code here:   
@@ -280,12 +286,17 @@ public class GUI extends javax.swing.JFrame {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
+                if(txtName.getText().trim().equals("")){
+                    JOptionPane.showMessageDialog(this, "Please enter buyer name","Waring",JOptionPane.INFORMATION_MESSAGE);
+                }  else{          
+                
         String country;
         if(rbCash.isSelected()){
             country="Lebanon";
         }
         else if(rbCard.isSelected()){
             country="USA";
+            
         }
         else {
             
@@ -354,9 +365,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField txtCard;
     private javax.swing.JTextField txtExpirationDate1;
     private javax.swing.JTextField txtExpirationDate2;
+    private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtSecurityCode;
     private javax.swing.JTextArea txtaAddress;
     private javax.swing.JTextArea txtaShippingInformation;
-    private javax.swing.JTextField txtbuyerInformation;
     // End of variables declaration//GEN-END:variables
 }
