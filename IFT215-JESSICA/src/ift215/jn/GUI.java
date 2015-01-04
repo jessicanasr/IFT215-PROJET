@@ -24,6 +24,7 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         pnlShippingInformation = new javax.swing.JPanel();
         lblName = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
@@ -33,8 +34,6 @@ public class GUI extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtaAddress = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
-        rbCash = new javax.swing.JRadioButton();
-        rbCard = new javax.swing.JRadioButton();
         txtCard = new javax.swing.JTextField();
         lblExpirationDate = new javax.swing.JLabel();
         txtExpirationDate1 = new javax.swing.JTextField();
@@ -42,6 +41,8 @@ public class GUI extends javax.swing.JFrame {
         btnSubmit = new javax.swing.JButton();
         lblSecurityCode = new javax.swing.JLabel();
         txtSecurityCode = new javax.swing.JTextField();
+        rbCash = new javax.swing.JRadioButton();
+        rbCard = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtaShippingInformation = new javax.swing.JTextArea();
@@ -114,25 +115,6 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Payment Method"));
 
-        rbCash.setText("Cash");
-        rbCash.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                rbCashStateChanged(evt);
-            }
-        });
-        rbCash.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbCashActionPerformed(evt);
-            }
-        });
-
-        rbCard.setText("Card");
-        rbCard.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                rbCardStateChanged(evt);
-            }
-        });
-
         txtCard.setMaximumSize(new java.awt.Dimension(2147483647, 214742));
         txtCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,11 +139,38 @@ public class GUI extends javax.swing.JFrame {
 
         lblSecurityCode.setText("Security code ");
 
+        txtSecurityCode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSecurityCodeActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(rbCash);
+        rbCash.setText("Cash");
+        rbCash.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                rbCashStateChanged(evt);
+            }
+        });
+        rbCash.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbCashActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(rbCard);
+        rbCard.setText("Card");
+        rbCard.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                rbCardStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -169,7 +178,7 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(btnSubmit)
                         .addGap(64, 64, 64))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblExpirationDate)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -180,22 +189,24 @@ public class GUI extends javax.swing.JFrame {
                                 .addComponent(lblSecurityCode)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtSecurityCode, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(rbCash)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(rbCard)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addContainerGap(124, Short.MAX_VALUE))))
+                                .addGap(33, 33, 33)
+                                .addComponent(txtCard, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(124, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(rbCash)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(8, 8, 8)
                 .addComponent(rbCash)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbCard)
-                    .addComponent(txtCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rbCard))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblExpirationDate)
@@ -250,7 +261,7 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -259,26 +270,6 @@ public class GUI extends javax.swing.JFrame {
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
-
-    private void rbCashStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rbCashStateChanged
-        // TODO add your handling code here:   
-        if(rbCash.isSelected()){
-            cbxCountry.addItem("Lebanon");
-        }
-    }//GEN-LAST:event_rbCashStateChanged
-
-    private void rbCardStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rbCardStateChanged
-        // TODO add your handling code here:
-           if(rbCard.isSelected()){
-            cbxCountry.addItem("USA");
-           }
-           
-  
-    }//GEN-LAST:event_rbCardStateChanged
-
-    private void rbCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbCashActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbCashActionPerformed
 
     private void cbxCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCountryActionPerformed
         // TODO add your handling code here:        
@@ -312,6 +303,29 @@ public class GUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_txtExpirationDate1ActionPerformed
 
+    @SuppressWarnings("empty-statement")
+    private void rbCashStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rbCashStateChanged
+        // TODO add your handling code here:
+       if(rbCash.isSelected());
+            changeCountryValues("Lebanon");          
+    }//GEN-LAST:event_rbCashStateChanged
+    
+
+    @SuppressWarnings("empty-statement")
+    private void rbCardStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rbCardStateChanged
+        // TODO add your handling code here:
+        if(rbCard.isSelected());
+            changeCountryValues("USA");
+    }//GEN-LAST:event_rbCardStateChanged
+
+    private void rbCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbCashActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbCashActionPerformed
+
+    private void txtSecurityCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSecurityCodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSecurityCodeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -341,6 +355,7 @@ public class GUI extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new GUI().setVisible(true);
             }
@@ -349,6 +364,7 @@ public class GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSubmit;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox cbxCountry;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -370,4 +386,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextArea txtaAddress;
     private javax.swing.JTextArea txtaShippingInformation;
     // End of variables declaration//GEN-END:variables
+
+    private void changeCountryValues(String lebanon) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
