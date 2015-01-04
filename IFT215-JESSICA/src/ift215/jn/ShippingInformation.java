@@ -2,6 +2,7 @@
 package ift215.jn;
 
 
+@SuppressWarnings("empty-statement")
 public class ShippingInformation {
     
     private String name;
@@ -60,13 +61,7 @@ public class ShippingInformation {
         this.card=card;
     }
     
+
+    
+      
 }
-    
-          
-                 
-                
-    
-    
-    
-    
-  
