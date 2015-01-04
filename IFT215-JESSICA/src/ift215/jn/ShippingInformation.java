@@ -56,18 +56,17 @@ public class ShippingInformation {
         return card;
     }
     
+      
     public void setCard(boolean card){
         this.card=card;
     }
+}
     
-            
-    
+          
+                 
                 
     
     
     
-   
-       
-       
-
-}
+    
+  

@@ -1,4 +1,5 @@
 
+
 package ift215.jn;
 
 public class GUI extends javax.swing.JFrame {
@@ -22,8 +23,9 @@ public class GUI extends javax.swing.JFrame {
         txtbuyerInformation = new javax.swing.JTextField();
         lblCountry = new javax.swing.JLabel();
         lblAddress = new javax.swing.JLabel();
-        txtBuyerInformation = new javax.swing.JTextField();
         cbxCountry = new javax.swing.JComboBox();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtaAddress = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         rbCash = new javax.swing.JRadioButton();
         rbCard = new javax.swing.JRadioButton();
@@ -35,7 +37,8 @@ public class GUI extends javax.swing.JFrame {
         lblSecurityCode = new javax.swing.JLabel();
         txtpaymentMethod = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtaShippingInformation = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,6 +63,10 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        txtaAddress.setColumns(20);
+        txtaAddress.setRows(5);
+        jScrollPane1.setViewportView(txtaAddress);
+
         javax.swing.GroupLayout pnlShippingInformationLayout = new javax.swing.GroupLayout(pnlShippingInformation);
         pnlShippingInformation.setLayout(pnlShippingInformationLayout);
         pnlShippingInformationLayout.setHorizontalGroup(
@@ -79,7 +86,7 @@ public class GUI extends javax.swing.JFrame {
                     .addGroup(pnlShippingInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(cbxCountry, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtbuyerInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtBuyerInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlShippingInformationLayout.setVerticalGroup(
@@ -96,7 +103,7 @@ public class GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlShippingInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblAddress)
-                    .addComponent(txtBuyerInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Payment Method"));
@@ -121,8 +128,19 @@ public class GUI extends javax.swing.JFrame {
         });
 
         txtCard.setMaximumSize(new java.awt.Dimension(2147483647, 214742));
+        txtCard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCardActionPerformed(evt);
+            }
+        });
 
         lblExpirationDate.setText("Expiration date ");
+
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
 
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -163,7 +181,7 @@ public class GUI extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtpaymentMethod, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(rbCash))
-                        .addContainerGap(73, Short.MAX_VALUE))))
+                        .addContainerGap(124, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,25 +206,24 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Shipping Information"));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
+        txtaShippingInformation.setEditable(false);
+        txtaShippingInformation.setColumns(20);
+        txtaShippingInformation.setRows(5);
+        jScrollPane2.setViewportView(txtaShippingInformation);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jTextField1)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 21, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -229,7 +246,7 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
@@ -254,10 +271,6 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rbCashActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void cbxCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCountryActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxCountryActionPerformed
@@ -276,6 +289,13 @@ public class GUI extends javax.swing.JFrame {
             country="France";
         }
     }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void txtCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCardActionPerformed
+    }//GEN-LAST:event_txtCardActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -317,7 +337,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JComboBox cbxCountry;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel lblAddress;
@@ -328,8 +349,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel pnlShippingInformation;
     private javax.swing.JRadioButton rbCard;
     private javax.swing.JRadioButton rbCash;
-    private javax.swing.JTextField txtBuyerInformation;
     private javax.swing.JTextField txtCard;
+    private javax.swing.JTextArea txtaAddress;
+    private javax.swing.JTextArea txtaShippingInformation;
     private javax.swing.JTextField txtbuyerInformation;
     private javax.swing.JTextField txtpaymentMethod;
     // End of variables declaration//GEN-END:variables
