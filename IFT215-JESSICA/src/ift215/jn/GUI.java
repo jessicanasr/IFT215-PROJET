@@ -31,11 +31,11 @@ public class GUI extends javax.swing.JFrame {
         rbCard = new javax.swing.JRadioButton();
         txtCard = new javax.swing.JTextField();
         lblExpirationDate = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        txtExpirationDate1 = new javax.swing.JTextField();
+        txtExpirationDate2 = new javax.swing.JTextField();
         btnSubmit = new javax.swing.JButton();
         lblSecurityCode = new javax.swing.JLabel();
-        txtpaymentMethod = new javax.swing.JTextField();
+        txtSecurityCode = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtaShippingInformation = new javax.swing.JTextArea();
@@ -136,9 +136,9 @@ public class GUI extends javax.swing.JFrame {
 
         lblExpirationDate.setText("Expiration date ");
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtExpirationDate1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtExpirationDate1ActionPerformed(evt);
             }
         });
 
@@ -163,24 +163,22 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(btnSubmit)
                         .addGap(64, 64, 64))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(lblExpirationDate)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(32, 32, 32)
-                                        .addComponent(lblSecurityCode))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(rbCard)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtCard, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lblExpirationDate)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtpaymentMethod, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(rbCash))
+                                .addComponent(txtExpirationDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtExpirationDate2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)
+                                .addComponent(lblSecurityCode)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtSecurityCode, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(rbCash)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(rbCard)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addContainerGap(124, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -195,10 +193,10 @@ public class GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblExpirationDate)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtExpirationDate1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtExpirationDate2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSecurityCode)
-                    .addComponent(txtpaymentMethod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSecurityCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(btnSubmit)
                 .addContainerGap())
@@ -257,14 +255,19 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_txtbuyerInformationActionPerformed
 
     private void rbCashStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rbCashStateChanged
-        // TODO add your handling code here:          
+        // TODO add your handling code here:   
+        if(rbCash.isSelected()){
+            cbxCountry.addItem("Lebanon");
+        }
     }//GEN-LAST:event_rbCashStateChanged
 
     private void rbCardStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rbCardStateChanged
         // TODO add your handling code here:
-        if(rbCard.isSelected()){
-        txtCard 'addItem' ("1505315064668430");
-        }
+           if(rbCard.isSelected()){
+            cbxCountry.addItem("USA");
+           }
+           
+  
     }//GEN-LAST:event_rbCardStateChanged
 
     private void rbCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbCashActionPerformed
@@ -272,7 +275,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_rbCashActionPerformed
 
     private void cbxCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCountryActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:        
     }//GEN-LAST:event_cbxCountryActionPerformed
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
@@ -292,10 +295,11 @@ public class GUI extends javax.swing.JFrame {
 
     private void txtCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCardActionPerformed
     }//GEN-LAST:event_txtCardActionPerformed
-
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+  
+    private void txtExpirationDate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtExpirationDate1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+        
+    }//GEN-LAST:event_txtExpirationDate1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -339,8 +343,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblCountry;
     private javax.swing.JLabel lblExpirationDate;
@@ -350,9 +352,11 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbCard;
     private javax.swing.JRadioButton rbCash;
     private javax.swing.JTextField txtCard;
+    private javax.swing.JTextField txtExpirationDate1;
+    private javax.swing.JTextField txtExpirationDate2;
+    private javax.swing.JTextField txtSecurityCode;
     private javax.swing.JTextArea txtaAddress;
     private javax.swing.JTextArea txtaShippingInformation;
     private javax.swing.JTextField txtbuyerInformation;
-    private javax.swing.JTextField txtpaymentMethod;
     // End of variables declaration//GEN-END:variables
 }

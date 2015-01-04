@@ -59,6 +59,7 @@ public class ShippingInformation {
     public void setCard(boolean card){
         this.card=card;
     }
+    
 }
     
           
