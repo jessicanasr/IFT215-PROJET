@@ -62,6 +62,22 @@ public class ShippingInformation {
     }
     
 
-    
+    public String getInvoice(){
+        String invoice;
+        
+        shippingInformation="       "+name;
+        
+        shippingInformation="    "+country;
+
+        if(cash==true){
+            shippingInformation+="      ";
+        }         
+        shippingInformation=("    ");
+        
+        shippingInformation+="        "
+                +address;
+        
+        return shippingInformation;
+    }
       
 }

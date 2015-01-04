@@ -134,10 +134,18 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        txtCard.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtCard.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
         txtSecurityCode.setText(" ");
 
         buttonGroup2.add(rbCash);
         rbCash.setText("Cash");
+        rbCash.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                rbCashStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -149,7 +157,8 @@ public class GUI extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(rbCash)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lblExpirationDate)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -163,9 +172,8 @@ public class GUI extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(rbCard)
                         .addGap(32, 32, 32)
-                        .addComponent(txtCard, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(rbCash))
-                .addContainerGap(365, Short.MAX_VALUE))
+                        .addComponent(txtCard)))
+                .addContainerGap(369, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,18 +276,23 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSubmitActionPerformed
       
 
-    @SuppressWarnings("empty-statement")
     private void rbCardStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rbCardStateChanged
         // TODO add your handling code here:
-        if(rbCard.isSelected()){
-            changeCountryValues("USA");
     }//GEN-LAST:event_rbCardStateChanged
+    
+    
+    private void rbCashStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rbCashStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbCashStateChanged
+    
+        
 
+                     
+                  
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
