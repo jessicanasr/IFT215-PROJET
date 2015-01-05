@@ -11,7 +11,7 @@ public class GUI extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(this);
         cbxCountry.equals("Lebanon");
-        rbCash.setSelected(true);
+        rbCash.setSelected(false);
         rbCard.setSelected(false);
         rootPane.setDefaultButton(btnSubmit);
         this.setTitle("Shipping Information");
@@ -258,14 +258,20 @@ public class GUI extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Please enter  name","Waring",JOptionPane.INFORMATION_MESSAGE);
                 }  else{          
                 
-        if(cbxCountry.equals("Lebanon")){
+        if(cbxCountry.equals ("Lebanon")){
                     rbCash.setSelected(true);
+                    rbCard.setSelected(false);
+        }
  
             
-        }else if(cbxCountry.equals("USA")){
+        else if(cbxCountry.equals("USA")){
                     rbCard.setSelected(true);
-        }else{
+                    rbCash.setSelected(false);
+        }
+        else{
             cbxCountry.equals("France");
+            rbCash.setSelected(true);
+            rbCard.setSelected(true);
         }
             
             int country =
@@ -277,11 +283,29 @@ public class GUI extends javax.swing.JFrame {
             String address = txtAAddress.getText();
             
             ShippingInformation si = 
-                    new ShippingInformation( 'country',  'name',  'address');
+                    new ShippingInformation( country,  name,  address);
             
             txtAShippingInformation.setText(si.getShippingInformation());
             
                 }
+    }
+    private void changeCountryValues(String name){
+        
+        cbxCountry.removeAllItems();
+        switch(name){
+            case"Cash":
+                cbxCountry.addItem("Lebanon");
+                break;
+            case "Card":
+                cbxCountry.addItem("USA");
+                cbxCountry.addItem("France");
+                break;
+            default:
+                cbxCountry.addItem("France");
+        
+        }
+    
+    
         
     }//GEN-LAST:event_btnSubmitActionPerformed
     private void rbCardStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rbCardStateChanged

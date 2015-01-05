@@ -62,18 +62,19 @@ public class ShippingInformation {
     }
     
       
-    public String getShippingInformation(){
-        String shippingInformation;
+     public String getShippingInformation(){
+        String shippinhInformation;
         
-        shippingInformation=""+ name;
-        
-        shippingInformation=""+country;
-
-        shippingInformation = "" + address;
-               
-        shippingInformation=("")+ card;
+        shippingInformation=" A buyer name "+name
+                 +" from "+country;
+        if(cash==true){
+            shippingInformation+=" (Cash) ";
+        }         
+        shippingInformation+=" address at "+address;  
+                
         return shippingInformation;
     }
+    
       
 }
 
