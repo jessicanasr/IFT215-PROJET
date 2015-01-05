@@ -199,6 +199,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Shipping Information"));
 
+        txtAShippingInformation.setEditable(false);
         txtAShippingInformation.setColumns(20);
         txtAShippingInformation.setRows(5);
         jScrollPane2.setViewportView(txtAShippingInformation);
@@ -312,8 +313,9 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSubmitActionPerformed
     private void rbCardStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rbCardStateChanged
         // TODO add your handling code here:
-        if (rbCash.isSelected()){
+        if (cbxCountry.equals("USA")){
             rbCash.setSelected(true);
+            txtCard.setText(" ");
             }
     }//GEN-LAST:event_rbCardStateChanged
     
