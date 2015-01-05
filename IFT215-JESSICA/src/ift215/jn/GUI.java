@@ -5,16 +5,14 @@ package ift215.jn;
 import javax.swing.JOptionPane;
 
 public class GUI extends javax.swing.JFrame {
-    
-    
-    
 
   
     public GUI() {
         initComponents();
         this.setLocationRelativeTo(this);
         cbxCountry.equals("Lebanon");
-        rbCash.setSelected(true);
+        rbCash.setSelected(false);
+        rbCard.setSelected(false);
         rootPane.setDefaultButton(btnSubmit);
         this.setTitle("Shipping Information");
     }
@@ -259,8 +257,10 @@ public class GUI extends javax.swing.JFrame {
                 if(txtName.getText().trim().equals("")){
                     JOptionPane.showMessageDialog(this, "Please enter  name","Waring",JOptionPane.INFORMATION_MESSAGE);
                 }  else{          
-                
-        if(cbxCountry.equals ("Lebanon")){
+            int country =
+                    Integer.parseInt(
+                            cbxCountry.getSelectedItem().toString());        if(cbxCountry.equals ("Lebanon")){
+                                
                     rbCash.setSelected(true);
                     rbCard.setSelected(false);
         }
@@ -276,9 +276,7 @@ public class GUI extends javax.swing.JFrame {
             rbCard.setSelected(true);
         }
             
-            int country =
-                    Integer.parseInt(
-                            cbxCountry.getSelectedItem().toString());
+            
             
             String name = txtName.getText();
             
@@ -295,15 +293,13 @@ public class GUI extends javax.swing.JFrame {
         
         cbxCountry.removeAllItems();
         switch(name){
-            
             case"Cash":
                 cbxCountry.addItem("Lebanon");
                 break;
-                
             case "Card":
                 cbxCountry.addItem("USA");
+                cbxCountry.addItem("France");
                 break;
-                
             default:
                 cbxCountry.addItem("France");
         
@@ -337,7 +333,9 @@ public class GUI extends javax.swing.JFrame {
                 rbCard.setSelected(true); 
             }
             
+            else{cbxCountry.equals("France");
             
+            }   
         }
         
         
