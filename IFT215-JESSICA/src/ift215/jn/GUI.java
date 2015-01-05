@@ -199,7 +199,6 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Shipping Information"));
 
-        txtAShippingInformation.setEditable(false);
         txtAShippingInformation.setColumns(20);
         txtAShippingInformation.setRows(5);
         jScrollPane2.setViewportView(txtAShippingInformation);
@@ -276,8 +275,11 @@ public class GUI extends javax.swing.JFrame {
             rbCard.setSelected(true);
         }
             
+            boolean cash;
             
-            
+            boolean card;
+            card = rbCard.isSelected();
+                        
             String name = txtName.getText();
             
             String address = txtAAddress.getText();
