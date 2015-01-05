@@ -60,22 +60,18 @@ public class ShippingInformation {
     public void setCard(boolean card){
         this.card=card;
     }
+   
     
+    public String getShippingInformation(){
+        String shippingInformation;
+        
+        shippingInformation=" John smith "+ name;
+        
+        shippingInformation=" USA   "+country;
 
-    public String getInvoice(){
-        String invoice;
-        
-        shippingInformation="       "+name;
-        
-        shippingInformation="    "+country;
-
-        if(cash==true){
-            shippingInformation+="      ";
-        }         
-        shippingInformation=("    ");
-        
-        shippingInformation+="        "
-                +address;
+        shippingInformation = "California, Santa Cruz, CA" + address;
+               
+        shippingInformation=(" Card   ")+ card;
         
         return shippingInformation;
     }

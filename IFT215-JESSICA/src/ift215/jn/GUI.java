@@ -9,8 +9,8 @@ public class GUI extends javax.swing.JFrame {
   
     public GUI() {
         initComponents();
-
-        rbCash.setSelected(true);
+        rbCash.setSelected(false);
+        rbCard.setSelected(false);
         rootPane.setDefaultButton(btnSubmit);
         this.setTitle("Shipping Information");
     }
@@ -30,9 +30,9 @@ public class GUI extends javax.swing.JFrame {
         txtName = new javax.swing.JTextField();
         lblCountry = new javax.swing.JLabel();
         lblAddress = new javax.swing.JLabel();
-        cbxCountry = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtaAddress = new javax.swing.JTextArea();
+        txtAAddress = new javax.swing.JTextArea();
+        cbxCountry = new javax.swing.JComboBox();
         jPanel1 = new javax.swing.JPanel();
         lblExpirationDate = new javax.swing.JLabel();
         btnSubmit = new javax.swing.JButton();
@@ -45,7 +45,7 @@ public class GUI extends javax.swing.JFrame {
         rbCash = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        txtaShippingInformation = new javax.swing.JTextArea();
+        txtAShippingInformation = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,16 +63,11 @@ public class GUI extends javax.swing.JFrame {
 
         lblAddress.setText("Address:");
 
-        cbxCountry.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lebanon", "France", "USA" }));
-        cbxCountry.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxCountryActionPerformed(evt);
-            }
-        });
+        txtAAddress.setColumns(20);
+        txtAAddress.setRows(5);
+        jScrollPane1.setViewportView(txtAAddress);
 
-        txtaAddress.setColumns(20);
-        txtaAddress.setRows(5);
-        jScrollPane1.setViewportView(txtaAddress);
+        cbxCountry.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lebanon", "USA", "France" }));
 
         javax.swing.GroupLayout pnlShippingInformationLayout = new javax.swing.GroupLayout(pnlShippingInformation);
         pnlShippingInformation.setLayout(pnlShippingInformationLayout);
@@ -90,10 +85,9 @@ public class GUI extends javax.swing.JFrame {
                             .addComponent(lblCountry, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(28, 28, 28)))
                 .addGroup(pnlShippingInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlShippingInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(cbxCountry, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxCountry, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlShippingInformationLayout.setVerticalGroup(
@@ -104,10 +98,10 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(lblName)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlShippingInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlShippingInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblCountry)
                     .addComponent(cbxCountry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlShippingInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblAddress)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -198,10 +192,10 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Shipping Information"));
 
-        txtaShippingInformation.setEditable(false);
-        txtaShippingInformation.setColumns(20);
-        txtaShippingInformation.setRows(5);
-        jScrollPane2.setViewportView(txtaShippingInformation);
+        txtAShippingInformation.setEditable(false);
+        txtAShippingInformation.setColumns(20);
+        txtAShippingInformation.setRows(5);
+        jScrollPane2.setViewportView(txtAShippingInformation);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -250,39 +244,58 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
 
-    private void cbxCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCountryActionPerformed
-        // TODO add your handling code here:        
-    }//GEN-LAST:event_cbxCountryActionPerformed
-
     @SuppressWarnings("empty-statement")
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
                 if(txtName.getText().trim().equals("")){
-                    JOptionPane.showMessageDialog(this, "Please enter buyer name","Waring",JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Please enter  name","Waring",JOptionPane.INFORMATION_MESSAGE);
                 }  else{          
                 
-        String country;
-        if(rbCash.isSelected()){
-            country="Lebanon";
+        String address;
+        
+        if (cbxCountry.equals("Lebanon")){
+            rbCash.setSelected(true);
         }
-        else if(rbCard.isSelected()){
-            country="USA";
+        if (cbxCountry.equals("USA")){
+            rbCard.setSelected(true);
+        }
+        
+        else{
+            if(cbxCountry.equals("France")){
+                {rbCard.setSelected(true);
+                rbCash.setSelected(true);
+                }
+            }
             
-        }
-        else {
+            int country =
+                    Integer.parseInt(
+                            cbxCountry.getSelectedItem().toString());
             
-            country="France";
-        }
+            String name = txtName.getText();
+            
+            ShippingInformation si = new ShippingInformation(address, country, name);
+            
+                
     }//GEN-LAST:event_btnSubmitActionPerformed
       
+  
+                
+    
 
+       
     private void rbCardStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rbCardStateChanged
         // TODO add your handling code here:
+        if (cbxCountry.equals("USA")){
+            rbCash.setSelected(true);
+            }
     }//GEN-LAST:event_rbCardStateChanged
     
-    
+ 
     private void rbCashStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rbCashStateChanged
         // TODO add your handling code here:
+        if (cbxCountry.equals("Lebanon")){
+            rbCash.setSelected(true);
+        }
     }//GEN-LAST:event_rbCashStateChanged
     
         
@@ -340,16 +353,16 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel pnlShippingInformation;
     private javax.swing.JRadioButton rbCard;
     private javax.swing.JRadioButton rbCash;
+    private javax.swing.JTextArea txtAAddress;
+    private javax.swing.JTextArea txtAShippingInformation;
     private javax.swing.JTextField txtCard;
     private javax.swing.JTextField txtExpirationDate1;
     private javax.swing.JTextField txtExpirationdate2;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtSecurityCode;
-    private javax.swing.JTextArea txtaAddress;
-    private javax.swing.JTextArea txtaShippingInformation;
     // End of variables declaration//GEN-END:variables
 
-    private void changeCountryValues(String lebanon) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //private void changeCountryValues(String lebanon) {
+    //    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-}
+
