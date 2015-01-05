@@ -71,6 +71,7 @@ public class ShippingInformation {
             shippingInformation+=" (Cash) ";
         }         
         shippingInformation+=" address at "+address;  
+                
         return shippingInformation;
     }
     

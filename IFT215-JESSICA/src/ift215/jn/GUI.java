@@ -260,14 +260,18 @@ public class GUI extends javax.swing.JFrame {
                 
         if(cbxCountry.equals ("Lebanon")){
                     rbCash.setSelected(true);
+                    rbCard.setSelected(false);
         }
  
             
         else if(cbxCountry.equals("USA")){
                     rbCard.setSelected(true);
+                    rbCash.setSelected(false);
         }
         else{
             cbxCountry.equals("France");
+            rbCash.setSelected(true);
+            rbCard.setSelected(true);
         }
             
             int country =
