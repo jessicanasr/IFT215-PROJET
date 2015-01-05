@@ -11,6 +11,7 @@ public class ShippingInformation {
     private boolean cash;
     private boolean card;
     private String shippingInformation;
+    
   
     
     public ShippingInformation (String name, int country, String address){
@@ -19,6 +20,10 @@ public class ShippingInformation {
         this.country=country;
         this.address=address;
         
+    }
+
+    ShippingInformation(int country, String name, String address) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public String getName(){

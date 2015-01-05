@@ -5,14 +5,16 @@ package ift215.jn;
 import javax.swing.JOptionPane;
 
 public class GUI extends javax.swing.JFrame {
+    
+    
+    
 
   
     public GUI() {
         initComponents();
         this.setLocationRelativeTo(this);
         cbxCountry.equals("Lebanon");
-        rbCash.setSelected(false);
-        rbCard.setSelected(false);
+        rbCash.setSelected(true);
         rootPane.setDefaultButton(btnSubmit);
         this.setTitle("Shipping Information");
     }
@@ -293,13 +295,15 @@ public class GUI extends javax.swing.JFrame {
         
         cbxCountry.removeAllItems();
         switch(name){
+            
             case"Cash":
                 cbxCountry.addItem("Lebanon");
                 break;
+                
             case "Card":
                 cbxCountry.addItem("USA");
-                cbxCountry.addItem("France");
                 break;
+                
             default:
                 cbxCountry.addItem("France");
         
