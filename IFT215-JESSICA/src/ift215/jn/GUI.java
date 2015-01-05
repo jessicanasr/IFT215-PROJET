@@ -9,7 +9,9 @@ public class GUI extends javax.swing.JFrame {
   
     public GUI() {
         initComponents();
-        rbCash.setSelected(false);
+        this.setLocationRelativeTo(this);
+        cbxCountry.equals("Lebanon");
+        rbCash.setSelected(true);
         rbCard.setSelected(false);
         rootPane.setDefaultButton(btnSubmit);
         this.setTitle("Shipping Information");
@@ -68,6 +70,11 @@ public class GUI extends javax.swing.JFrame {
         jScrollPane1.setViewportView(txtAAddress);
 
         cbxCountry.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lebanon", "USA", "France" }));
+        cbxCountry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxCountryActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlShippingInformationLayout = new javax.swing.GroupLayout(pnlShippingInformation);
         pnlShippingInformation.setLayout(pnlShippingInformationLayout);
@@ -251,21 +258,15 @@ public class GUI extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Please enter  name","Waring",JOptionPane.INFORMATION_MESSAGE);
                 }  else{          
                 
-        String address;
-        
-        if (cbxCountry.equals("Lebanon")){
-            rbCash.setSelected(true);
+       String address;
+        if(cbxCountry.equals("Lebanon")){
+            rbCash.isSelected(); 
+            
+        }else if(cbxCountry.equals("USA")){
+            rbCard.isSelected();
+        }else{
+            cbxCountry.equals("France");
         }
-        if (cbxCountry.equals("USA")){
-            rbCard.setSelected(true);
-        }
-        
-        else{
-            if(cbxCountry.equals("France")){
-                {rbCard.setSelected(true);
-                rbCash.setSelected(true);
-                }
-            }
             
             int country =
                     Integer.parseInt(
@@ -275,17 +276,12 @@ public class GUI extends javax.swing.JFrame {
             
             ShippingInformation si = new ShippingInformation(address, country, name);
             
-                
+                }
+        
     }//GEN-LAST:event_btnSubmitActionPerformed
-      
-  
-                
-    
-
-       
     private void rbCardStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rbCardStateChanged
         // TODO add your handling code here:
-        if (cbxCountry.equals("USA")){
+        if (rbCash.isSelected()){
             rbCash.setSelected(true);
             }
     }//GEN-LAST:event_rbCardStateChanged
@@ -297,6 +293,23 @@ public class GUI extends javax.swing.JFrame {
             rbCash.setSelected(true);
         }
     }//GEN-LAST:event_rbCashStateChanged
+
+    private void cbxCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCountryActionPerformed
+        // TODO add your handling code here:
+        if(cbxCountry.equals("Lebanon")){
+            rbCash.setSelected(true);
+        }
+        else{
+            if(cbxCountry.equals("USA")){
+                rbCard.setSelected(true); 
+            }
+            
+            
+        }
+        
+        
+        
+    }//GEN-LAST:event_cbxCountryActionPerformed
     
         
 
