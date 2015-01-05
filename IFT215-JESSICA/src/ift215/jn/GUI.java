@@ -258,12 +258,12 @@ public class GUI extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Please enter  name","Waring",JOptionPane.INFORMATION_MESSAGE);
                 }  else{          
                 
-       String address;
         if(cbxCountry.equals("Lebanon")){
-            rbCash.isSelected(); 
+                    rbCash.setSelected(true);
+ 
             
         }else if(cbxCountry.equals("USA")){
-            rbCard.isSelected();
+                    rbCard.setSelected(true);
         }else{
             cbxCountry.equals("France");
         }
@@ -274,7 +274,12 @@ public class GUI extends javax.swing.JFrame {
             
             String name = txtName.getText();
             
-            ShippingInformation si = new ShippingInformation(address, country, name);
+            String address = txtAAddress.getText();
+            
+            ShippingInformation si = 
+                    new ShippingInformation( 'country',  'name',  'address');
+            
+            txtAShippingInformation.setText(si.getShippingInformation());
             
                 }
         

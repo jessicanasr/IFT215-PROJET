@@ -11,7 +11,7 @@ public class ShippingInformation {
     private boolean cash;
     private boolean card;
     private String shippingInformation;
-
+  
     
     public ShippingInformation (String name, int country, String address){
         
@@ -61,20 +61,17 @@ public class ShippingInformation {
         this.card=card;
     }
     
-   
-    
+      
     public String getShippingInformation(){
         String shippingInformation;
         
-        shippingInformation="    "+ name;
+        shippingInformation=""+ name;
         
-        shippingInformation="   "+country;
+        shippingInformation=""+country;
 
-        shippingInformation = "    " + address;
+        shippingInformation = "" + address;
                
-        shippingInformation=("    ")+ card;
-        
-        
+        shippingInformation=("")+ card;
         return shippingInformation;
     }
       
